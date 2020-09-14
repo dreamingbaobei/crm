@@ -1,23 +1,16 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Login from '../views/Login'
-Vue.use(VueRouter)
 
+Vue.use(VueRouter)
+const constantRoutes = [
+  { path: '/login', component: Login },
+  { path: '/404', component: () => import('../views/ErrorPage.vue') },
+  { path: '*', redirect: '/404' }
+]
+// const asyncRoutes = [{ path: '/', component: () => import('../views/Layout.vue') }]
 const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: import('../views/Home.vue')
-  },
-  {
-    path: '/login',
-    component: Login
-  },
-  {
-    path: '/404',
-    name: 'About',
-    component: () => import('../views/ErrorPage.vue')
-  }
+  ...constantRoutes
 ]
 
 const router = new VueRouter({

@@ -43,6 +43,10 @@ export default {
       this.$store.dispatch('user/login', {
         username: this.username,
         password: md5(this.password)
+      }).then(res => {
+        this.$toast(res.message)
+        const toUrl = this.$route.query.redirect || '/'
+        this.$router.push(toUrl)
       })
     }
   }

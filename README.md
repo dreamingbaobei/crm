@@ -1,4 +1,4 @@
-# crm
+# vue +vant UI +axios +mockjs 移动端客户关系管理
 
 ## Project setup
 ```

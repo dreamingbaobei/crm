@@ -11,6 +11,10 @@ import 'lib-flexible/flexible'
 import 'normalize.css/normalize.css'
 import './style/style.less'
 
+import { Toast } from 'vant'
+
+Vue.use(Toast)
+
 if (process.env.NODE_ENV === 'development') {
   require('./mock')
 }
@@ -28,7 +32,7 @@ Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
 
-console.log(process.env)
+// console.log(process.env)
 
 Vue.config.productionTip = false
 
