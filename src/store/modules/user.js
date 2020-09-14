@@ -30,7 +30,7 @@ const actions = {
         commit('SET_TOKEN', token)
         // token写入本地存储, 用户信息写入本地存储
         sessionStorage.setItem('token', token)
-        resolve(data.data)
+        resolve(data)
         // 获取用户信息和用户权限
         // Promise.all([dispatch('getInfo'), dispatch('getPermissions')]).then(data => {
         //   resolve(data[1])
